@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :category, only: [:show]
   resources :contents, only: [:show]
   root'category#show'
+
+ #code by N s
+ resources :blogs, only: [:index, :new, :create]
+ resources :messages, only: [:index, :create]
+
+ #code by N e
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
