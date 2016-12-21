@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :category, only: [:show]
-  resources :contents, only: [:show, :chat, :find_work, :lab, :opinion, :others, :teach]
+  resources :contents, only: [:show]
   root'category#show'
 
  #code by N s
