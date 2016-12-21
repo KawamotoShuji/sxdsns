@@ -17,6 +17,7 @@ Rails.application.routes.draw do
  resources :opinion, only: [:index, :show]
  resources :others, only: [:index, :show]
  resources :teach, only: [:index, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
