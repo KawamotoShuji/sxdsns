@@ -10,7 +10,13 @@ Rails.application.routes.draw do
  resources :blogs, only: [:index, :new, :create]
  resources :messages, only: [:index, :create]
 
- #code by N e
+ #code by I e
+ resources :chat, only: [:index, :show]
+ resources :find_work, only: [:index, :show]
+ resources :lab, only: [:index, :show]
+ resources :opinion, only: [:index, :show]
+ resources :others, only: [:index, :show]
+ resources :teach, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
