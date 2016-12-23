@@ -1,0 +1,20 @@
+<h1>とつげきとなりのばんごはん</h1>
+
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <% @message.errors.full_messages.each do |err| %>
+      <font color="red"><%= err %></font><br>
+    <% end %>
+  <% end %>
+
+  <p>タイトル:<%= f.text_field :title %></p>
+  <p>本文:<%= f.text_area :body %></p>
+  <%= f.submit %><br>
+<% end %>
+<hr>
+
+<% @messages.each do |msg| %>
+  <%= msg.id %> : <%= msg.title %> : <%= msg.created_at %><br>
+  <pre><%= msg.body %></pre>
+  <br>
+<% end %>
