@@ -1,0 +1,6 @@
+<% messages.each do |message| %>
+<% unless message.id.nil? %>
+<%= message.user.name %>さんがコメントしました。
+<%= message.content %>
+<% end %>
+<% end %>

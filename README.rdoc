@@ -1,9 +1,5 @@
-== README
-testaaaaaaaaaa
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
+== README=======
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -28,6 +24,9 @@ Things you may want to cover:
 
 * ...
 
+prott URL......................
+https://prottapp.com/p/9f65a8
+...............................
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

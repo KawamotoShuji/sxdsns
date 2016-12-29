@@ -1,0 +1,2 @@
+module OpinionMessagesHelper
+end

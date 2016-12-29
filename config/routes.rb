@@ -1,9 +1,31 @@
 Rails.application.routes.draw do
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :category, only: [:show]
-  resources :contents, only: [:show]
-  root'category#show'
+  root'categorys#show'
+
+  #code by I e
+  #ネスト型のルーティング定義by河本
+  resources :chats, only: [:index, :show, :new, :create] do
+    resources :messages
+  end
+  resources :find_works, only: [:index, :show, :new, :create] do
+    resources :message2s
+  end
+  resources :labs, only: [:index, :show, :new, :create] do
+    resources :message3s
+  end
+  resources :opinions, only: [:index, :show, :new, :create] do
+    resources :message4s
+  end
+  resources :others, only: [:index, :show, :new, :create] do
+    resources :message5s
+  end
+  resources :teaches, only: [:index, :show, :new, :create] do
+    resources :message6s
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
