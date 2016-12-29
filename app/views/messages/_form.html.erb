@@ -1,0 +1,5 @@
+<%= form_for([chat,message], remote: true) do |f| %>
+<%= f.hidden_field :chat_id %>
+<%= f.text_field :content, placeholder: "内容"%>
+<%= f.submit %>
+<% end %>

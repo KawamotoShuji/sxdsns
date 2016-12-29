@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record
-gem 'mysql2', '0.3.18'
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,3 +48,6 @@ gem 'cancan'
 gem 'pry-rails'
 gem 'compass-rails','~> 2.0'
 gem 'sprockets','2.11.0'
+gem 'tzinfo-data'
+gem 'coffee-script-source', '1.8.0'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'

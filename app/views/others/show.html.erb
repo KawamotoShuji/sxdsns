@@ -1,2 +1,14 @@
-<h1>Others#show</h1>
-<p>Find me in app/views/others/show.html.erb</p>
+<%= notice %>
+タイトル
+<%= @other.title %>
+内容
+<%= @other.body %>
+作成時間
+<%= @other.created_at.strftime("%y/%m/%d %p %l:%M") %>
+コメント一覧
+<!-- ↓これは消さないで -->
+<div id="messages_area">
+  <%= render partial: 'message5s/index', locals: { message5s: @messages, other: @other } %>
+</div>
+<%= render partial: 'message5s/form', locals: { message5: @message, other: @other } %>
+<%= link_to '戻る', others_path %>

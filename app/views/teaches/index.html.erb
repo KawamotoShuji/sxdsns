@@ -1,0 +1,9 @@
+授業一覧
+<%= link_to "投稿", new_teach_path %>
+<% @teaches.each do |teach| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to teach_path(teach) do %>
+<%= teach.title %>
+<% end %>
+<%= teach.body %>
+<% end %>

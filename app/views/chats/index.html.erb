@@ -1,0 +1,10 @@
+チャット一覧
+<%= link_to "投稿", new_chat_path %>
+<% @chats.each do |chat| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to chat_path(chat) do %>
+<%= chat.title %>
+<% end %>
+<%= chat.body %>
+
+<% end %>

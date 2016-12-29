@@ -1,0 +1,10 @@
+就活関連一覧
+<%= link_to "投稿", new_find_work_path %>
+<% @findworks.each do |find_work| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to find_work_path(find_work) do %>
+<%= find_work.title %>
+<% end %>
+<%= find_work.body %>
+
+<% end %>
