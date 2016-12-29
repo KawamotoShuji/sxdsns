@@ -1,0 +1,9 @@
+研究室一覧
+<%= link_to "投稿", new_lab_path %>
+<% @labs.each do |lab| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to lab_path(lab) do %>
+<%= lab.title %>
+<% end %>
+<%= lab.body %>
+<% end %>

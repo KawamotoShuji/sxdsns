@@ -1,0 +1,14 @@
+<%= notice %>
+タイトル
+<%= @chat.title %>
+内容
+<%= @chat.body %>
+作成時間
+<%= @chat.created_at.strftime("%y/%m/%d %p %l:%M") %>
+コメント一覧
+<!-- ↓これは消さないで -->
+<div id="messages_area">
+  <%= render partial: 'messages/index', locals: { messages: @messages, chat: @chat } %>
+</div>
+<%= render partial: 'messages/form', locals: { message: @message, chat: @chat } %>
+<%= link_to '戻る', chats_path %>

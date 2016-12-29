@@ -1,0 +1,9 @@
+その他一覧
+<%= link_to "投稿", new_other_path %>
+<% @others.each do |other| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to other_path(other) do %>
+<%= other.title %>
+<% end %>
+<%= other.body %>
+<% end %>

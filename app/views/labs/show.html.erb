@@ -1,0 +1,14 @@
+<%= notice %>
+タイトル
+<%= @lab.title %>
+内容
+<%= @lab.body %>
+作成時間
+<%= @lab.created_at.strftime("%y/%m/%d %p %l:%M") %>
+コメント一覧
+<!-- ↓これは消さないで -->
+<div id="messages_area">
+  <%= render partial: 'message3s/index', locals: { message3s: @messages, lab: @lab } %>
+</div>
+<%= render partial: 'message3s/form', locals: { message3: @message, lab: @lab } %>
+<%= link_to '戻る', labs_path %>
