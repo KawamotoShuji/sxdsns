@@ -1,0 +1,9 @@
+意見一覧
+<%= link_to "投稿", new_opinion_path %>
+<% @opinions.each do |opinion| %>
+<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+<%= link_to opinion_path(opinion) do %>
+<%= opinion.title %>
+<% end %>
+<%= opinion.body %>
+<% end %>

@@ -1,0 +1,5 @@
+<%= form_for([find_work,message2], remote: true) do |f| %>
+<%= f.hidden_field :find_work_id %>
+<%= f.text_field :content, placeholder: "内容" %>
+<%= f.submit %>
+<% end %>
