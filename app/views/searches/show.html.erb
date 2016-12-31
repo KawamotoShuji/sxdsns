@@ -1,0 +1,7 @@
+<h1>「<%= params[:search] %>」の検索結果</h1>
+  <% $search.each do |search| %>
+    <%= search.title %>
+    <%= search.body %>
+  <% end %>
+
+<%= link_to 'ホーム', root_path %>

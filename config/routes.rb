@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'searches/show'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :category, only: [:show]
