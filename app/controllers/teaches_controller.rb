@@ -10,6 +10,7 @@ class TeachesController < ApplicationController
 
   def index
     @teaches = Teach.all
+    @search = Teach.search(params[:search])
   end
 
   def create

@@ -10,6 +10,7 @@ class OthersController < ApplicationController
 
   def index
     @others = Other.all
+    @search = Other.search(params[:search])
   end
 
   def create

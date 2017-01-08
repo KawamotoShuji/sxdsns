@@ -10,6 +10,7 @@ class LabsController < ApplicationController
 
   def index
     @labs = Lab.all
+    @search = Lab.search(params[:search])
   end
 
   def create

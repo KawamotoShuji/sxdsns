@@ -11,6 +11,7 @@ class FindWorksController < ApplicationController
 
   def index
     @findworks = FindWork.all
+    @search = FindWork.search(params[:search])
   end
 
   def create

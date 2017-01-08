@@ -1,10 +1,29 @@
-就活関連一覧
-<%= link_to "投稿", new_find_work_path %>
-<% @findworks.each do |find_work| %>
-<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
-<%= link_to find_work_path(find_work) do %>
-<%= find_work.title %>
-<% end %>
-<%= find_work.body %>
+<!--検索機能-->
+<p class="search_btn"><%= form_tag find_works_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], placeholder: "チャット一覧検索" %>
+  <%= submit_tag "Search", :name => nil %></p>
+<% end %><!-- end 検索機能-->
 
+<%if params[:search].blank? %>
+  就活関連一覧
+<%= link_to "投稿", new_find_work_path %>
+  <% @findworks.each do |find_work| %>
+    <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+    <%= link_to find_work_path(find_work) do %>
+    <%= find_work.title %>
+    <% end %>
+    <%= find_work.body %>
+  <% end %>
+
+<% else %>
+
+  <h1>「<%= params[:search] %>」の検索結果</h1>
+    <% @search.each do |search| %>
+      <%= link_to find_work_path(search) do %>
+        <%= search.title %>
+      <% end %>
+      <%= search.body %>
+  <% end %>
+  <br>
+  <%= link_to '戻る', find_works_path %>
 <% end %>

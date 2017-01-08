@@ -9,11 +9,7 @@
         <% if user_signed_in? %>
         <li><%= link_to 'マイページ', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <!--検索機能-->
-        <p class="search_btn"><%= form_tag searches_show_path, :method => 'get' do %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %></p>
-          <% end %><!-- end 検索機能-->
+        <li><%= link_to 'ホーム', root_path %></li>
         <% else %>
         <li><%= link_to 'ログイン', new_user_session_path %></li>
         <li><%= link_to 'サインアップ', new_user_registration_path %></li>
@@ -30,6 +26,7 @@
 </div>
 <% end %>
 <%= yield %>
+<br>
 
 </body>
 </html>
