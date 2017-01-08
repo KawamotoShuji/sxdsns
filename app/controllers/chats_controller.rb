@@ -12,6 +12,8 @@ class ChatsController < ApplicationController
 
   def index
     @chats = Chat.all
+    @search = Chat.search(params[:search])
+    #binding.pry
   end
 
   def create

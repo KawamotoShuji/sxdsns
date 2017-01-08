@@ -10,6 +10,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinions = Opinion.all
+    @search = Opinion.search(params[:search])
   end
 
   def create

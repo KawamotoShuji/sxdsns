@@ -1,9 +1,29 @@
+<!--検索機能-->
+<p class="search_btn"><%= form_tag opinions_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], placeholder: "チャット一覧検索" %>
+  <%= submit_tag "Search", :name => nil %></p>
+<% end %><!-- end 検索機能-->
+
+<%if params[:search].blank? %>
 意見一覧
 <%= link_to "投稿", new_opinion_path %>
-<% @opinions.each do |opinion| %>
-<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
-<%= link_to opinion_path(opinion) do %>
-<%= opinion.title %>
-<% end %>
-<%= opinion.body %>
+  <% @opinions.each do |opinion| %>
+    <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+    <%= link_to opinion_path(opinion) do %>
+    <%= opinion.title %>
+    <% end %>
+    <%= opinion.body %>
+  <% end %>
+
+<% else %>
+
+  <h1>「<%= params[:search] %>」の検索結果</h1>
+    <% @search.each do |search| %>
+      <%= link_to opinion_path(search) do %>
+        <%= search.title %>
+      <% end %>
+      <%= search.body %>
+  <% end %>
+  <br>
+  <%= link_to '戻る', opinions_path %>
 <% end %>

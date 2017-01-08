@@ -1,9 +1,29 @@
+<!--検索機能-->
+<p class="search_btn"><%= form_tag teaches_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], placeholder: "チャット一覧検索" %>
+  <%= submit_tag "Search", :name => nil %></p>
+<% end %><!-- end 検索機能-->
+
+<%if params[:search].blank? %>
 授業一覧
-<%= link_to "投稿", new_teach_path %>
-<% @teaches.each do |teach| %>
-<!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
-<%= link_to teach_path(teach) do %>
-<%= teach.title %>
-<% end %>
-<%= teach.body %>
+  <%= link_to "投稿", new_teach_path %>
+  <% @teaches.each do |teach| %>
+    <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+    <%= link_to teach_path(teach) do %>
+    <%= teach.title %>
+    <% end %>
+    <%= teach.body %>
+  <% end %>
+
+<% else %>
+
+  <h1>「<%= params[:search] %>」の検索結果</h1>
+    <% @search.each do |search| %>
+      <%= link_to teach_path(search) do %>
+        <%= search.title %>
+      <% end %>
+      <%= search.body %>
+  <% end %>
+  <br>
+  <%= link_to '戻る', :back %>
 <% end %>
