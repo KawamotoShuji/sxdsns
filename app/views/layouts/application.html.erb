@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<body class="body">
+  <div class="menutag">
+    <ul style="list-style:none"
         <% if user_signed_in? %>
         <li><%= link_to 'マイページ', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -19,14 +23,18 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
+<div class="page">
 <% flash.each do |key, value| %>
 <div class="alert alert-<%= key %>">
   <%= value %>
 </div>
 <% end %>
 <%= yield %>
+<<<<<<< HEAD
 <br>
+=======
+</div>
+>>>>>>> develop
 
 </body>
 </html>
