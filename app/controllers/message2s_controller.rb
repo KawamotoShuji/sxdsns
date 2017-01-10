@@ -22,6 +22,6 @@ class Message2sController < ApplicationController
   private
   # ストロングパラメーター
   def message_params
-    params.require(:message2).permit(:find_work_id, :body, :title,:content)
+    params.require(:message2).permit(:find_work_id, :body, :title,:content,:avatar)
   end
 end

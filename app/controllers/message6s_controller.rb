@@ -22,6 +22,6 @@ class Message6sController < ApplicationController
   private
   # ストロングパラメーター
   def message_params
-    params.require(:message6).permit(:teach_id, :body, :title,:content)
+    params.require(:message6).permit(:teach_id, :body, :title,:content,:avatar)
   end
 end

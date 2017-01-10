@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   # コメントを保存、投稿するためのアクションです。
   def create
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
+    binding.pry
     @message = current_user.messages.build(message_params)
     @chat = @message.chat
 
@@ -22,6 +23,6 @@ class MessagesController < ApplicationController
   private
   # ストロングパラメーター
   def message_params
-    params.require(:message).permit(:chat_id, :body, :title,:content)
+    params.require(:message).permit(:chat_id, :body, :title,:content,:avatar)
   end
 end

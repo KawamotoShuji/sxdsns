@@ -1,6 +1,12 @@
 <% message4s.each do |message| %>
 <% unless message.id.nil? %>
 <%= message.user.name %>さんがコメントしました。
+<center>
+  <div class="avatar"><% if message.avatar? %>
+    <%= image_tag message.avatar.url %>
+    <% end %>
+  </div>
+</center>
 <%= message.content %>
 <% end %>
 <% end %>
