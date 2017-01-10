@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'searches/show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   #code by I e
   #ネスト型のルーティング定義by河本
+
   resources :chats, only: [:index, :show, :new, :create] do
     resources :messages
   end

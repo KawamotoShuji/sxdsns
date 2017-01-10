@@ -22,6 +22,6 @@ class MessagesController < ApplicationController
   private
   # ストロングパラメーター
   def message_params
-    params.require(:message).permit(:chat_id, :body, :title,:content)
+    params.require(:message).permit(:chat_id, :body, :title,:content,:avatar)
   end
 end
