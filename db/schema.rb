@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231064348) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",      limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "avatar",       limit: 255
   end
 
   add_index "message2s", ["find_work_id"], name: "index_message2s_on_find_work_id", using: :btree
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",     limit: 255
   end
 
   add_index "message3s", ["lab_id"], name: "index_message3s_on_lab_id", using: :btree
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",     limit: 255
   end
 
   add_index "message4s", ["opinion_id"], name: "index_message4s_on_opinion_id", using: :btree
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",     limit: 255
   end
 
   add_index "message5s", ["other_id"], name: "index_message5s_on_other_id", using: :btree
@@ -93,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",     limit: 255
   end
 
   add_index "message6s", ["teach_id"], name: "index_message6s_on_teach_id", using: :btree
@@ -104,6 +108,7 @@ ActiveRecord::Schema.define(version: 20161231064348) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",     limit: 255
   end
 
   add_index "messages", ["chat_id"], name: "index_messages_on_chat_id", using: :btree

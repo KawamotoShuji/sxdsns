@@ -8,7 +8,7 @@ class Message5sController < ApplicationController
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @message.save
-        format.html { redirect_to others_path(@other), notice: 'コメントを投稿しました。' }
+        format.html { redirect_to other_path(@other), notice: 'コメントを投稿しました。' }
         format.json { render :show, status: :created, location: @message }
         # JS形式でレスポンスを返します。
         format.js { render :index }
@@ -22,6 +22,6 @@ class Message5sController < ApplicationController
   private
   # ストロングパラメーター
   def message_params
-    params.require(:message5).permit(:other_id, :body, :title,:content)
+    params.require(:message5).permit(:other_id, :body, :title,:content,:avatar)
   end
 end
