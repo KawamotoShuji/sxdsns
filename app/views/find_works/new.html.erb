@@ -1,3 +1,14 @@
+<% if @findwork.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @findwork.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @findwork.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@findwork) do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
