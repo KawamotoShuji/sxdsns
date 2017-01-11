@@ -5,14 +5,14 @@
 <% end %><!-- end 検索機能-->
 
 <%if params[:search].blank? %>
-意見一覧
-<%= link_to "投稿", new_opinion_path %>
+<h1>意見一覧 <button class="vote"><%= link_to "投稿", new_opinion_path %></button></h1>
+
   <% @opinions.each do |opinion| %>
     <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
     <%= link_to opinion_path(opinion) do %>
     <%= opinion.title %>
     <% end %>
-    <%= opinion.body %>
+    <p><%= opinion.body %></p>
   <% end %>
 
 <% else %>

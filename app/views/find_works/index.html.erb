@@ -5,14 +5,14 @@
 <% end %><!-- end 検索機能-->
 
 <%if params[:search].blank? %>
-  就活関連一覧
-<%= link_to "投稿", new_find_work_path %>
+  <h1>就活関連一覧 <button class="vote"><%= link_to "投稿", new_find_work_path %></button></h1>
+
   <% @findworks.each do |find_work| %>
     <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
     <%= link_to find_work_path(find_work) do %>
     <%= find_work.title %>
     <% end %>
-    <%= find_work.body %>
+    <p><%= find_work.body %></p>
   <% end %>
 
 <% else %>

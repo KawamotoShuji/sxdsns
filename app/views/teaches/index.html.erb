@@ -5,14 +5,14 @@
 <% end %><!-- end 検索機能-->
 
 <%if params[:search].blank? %>
-授業一覧
-  <%= link_to "投稿", new_teach_path %>
+<h1>授業一覧<button class="vote"><%= link_to "投稿", new_teach_path %></button></h1>
+  
   <% @teaches.each do |teach| %>
     <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
     <%= link_to teach_path(teach) do %>
     <%= teach.title %>
     <% end %>
-    <%= teach.body %>
+    <p><%= teach.body %></p>
   <% end %>
 
 <% else %>

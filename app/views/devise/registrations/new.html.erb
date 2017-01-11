@@ -1,29 +1,33 @@
 
-    <h2>サインアップ</h2>
 
+    <h1>サインアップ</h1>
+
+
+<div class="page4">
     <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
+    <div class="field"><p2>メールアドレス　　</p2>
       <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
-    </div>
+    </div><br>
 
     <!-- 名前入力用のフィールドを追加 -->
-    <div class="field">
+    <div class="field"><p2>名前　　　　　　　</p2>
       <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
-    </div>
+    </div><br>
 
-    <div class="field">
+    <div class="field"><p2>パスワード　　　　</p2>
       <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
-    </div>
+    </div><br>
 
-    <div class="field">
+    <div class="field"><p2>パスワード（確認）</p2>
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
-    </div>
+    </div><br>
 
     <div class="actions">
       <%= f.submit "サインアップ", class: "btn btn-primary btn-block" %>
-    </div>
+    </div><br>
     <% end %>
 
     <%= render "devise/shared/links" %>
+</div>

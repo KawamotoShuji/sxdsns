@@ -1,9 +1,25 @@
-<%= form_for(@teach) do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br>
-<%= f.label :body %>
-<%= f.text_field :body %>
-<br>
-<%= f.submit "投稿"%>
+
+<h1>授業一覧 <button class="vote"><%= link_to "戻る", teaches_path %></button></h1>
+
+<% if @teach.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @teach.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @teach.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
+
+<div class="page4"><br>
+<%= form_for(@teach) do |f| %>
+<p2><%= f.label :title %></p2><br>
+<%= f.text_field :title %>
+<br><br>
+<p2><%= f.label :body %></p2><br>
+<%= f.text_field :body %>
+<br><br>
+<%= f.submit "投稿",:class => 'bottom'%>
+<% end %>
+</div>
