@@ -1,4 +1,5 @@
 class Opinion < ActiveRecord::Base
+  validates :title, :body, presence: true
   belongs_to :user
   belongs_to :search
   has_many :message4s
