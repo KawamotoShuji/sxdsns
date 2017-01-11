@@ -5,14 +5,14 @@
 <% end %><!-- end 検索機能-->
 
 <%if params[:search].blank? %>
-  チャット一覧
-  <%= link_to "投稿", new_chat_path %>
+  <h1>チャット一覧 <button class="vote"><%= link_to "投稿", new_chat_path %></button></h1>
+  
   <% @chats.each do |chat| %>
     <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
     <%= link_to chat_path(chat) do %>
       <%= chat.title %>
     <% end %>
-    <%= chat.body %>
+    <p><%= chat.body %></p>
   <% end %>
 
 <% else %>

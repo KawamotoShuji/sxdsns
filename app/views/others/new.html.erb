@@ -1,3 +1,5 @@
+<h1>その他一覧<button class="vote"><%= link_to "戻る", others_path %></button></h1>
+
 <% if @other.errors.any? %>
   <div id="error_explanation">
     <h2><%= @other.errors.count %>件のエラーがあります。</h2>
@@ -9,12 +11,14 @@
   </div>
 <% end %>
 
+<div class="page4"><br>
 <%= form_for(@other) do |f| %>
-<%= f.label :title %>
+<p2><%= f.label :title %></p2><br>
 <%= f.text_field :title %>
-<br>
-<%= f.label :body %>
+<br><br>
+<p2><%= f.label :body %></p2><br>
 <%= f.text_field :body %>
-<br>
-<%= f.submit "投稿"%>
+<br><br>
+<%= f.submit "投稿",:class => 'bottom'%>
 <% end %>
+</div>

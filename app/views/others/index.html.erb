@@ -5,14 +5,14 @@
 <% end %><!-- end 検索機能-->
 
 <%if params[:search].blank? %>
-その他一覧
-  <%= link_to "投稿", new_other_path %>
+<h1>その他一覧<button class="vote"><%= link_to "投稿", new_other_path %></button></h1>
+  
   <% @others.each do |other| %>
     <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
     <%= link_to other_path(other) do %>
     <%= other.title %>
     <% end %>
-    <%= other.body %>
+    <p><%= other.body %></p>
   <% end %>
 
 <% else %>
