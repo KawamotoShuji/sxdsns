@@ -7,20 +7,20 @@
     <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field"><p2>メールアドレス　　</p2>
+    <div class="field"><p class="p-content">メールアドレス　　</p>
       <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
     </div><br>
 
     <!-- 名前入力用のフィールドを追加 -->
-    <div class="field"><p2>名前　　　　　　　</p2>
+    <div class="field"><p class="p-content">名前　　　　　　　</p>
       <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
     </div><br>
 
-    <div class="field"><p2>パスワード　　　　</p2>
+    <div class="field"><p class="p-content">パスワード　　　　</p>
       <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
     </div><br>
 
-    <div class="field"><p2>パスワード（確認）</p2>
+    <div class="field"><p class="p-content">パスワード（確認）</p>
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
     </div><br>
 

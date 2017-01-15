@@ -1,0 +1,24 @@
+<% comments.each do |message| %>
+<% unless message.id.nil? %>
+<%if current_user.id == message.user.id %>
+<div class="content-block">
+  <p class="content-right">
+    <%= message.body %>　　
+    <% if message.avatar? %>
+    <center><%= image_tag message.avatar.url %></center>
+    <% end %>
+  </p>
+</div>
+<%else%>
+<div class="content-block">
+  <p class="content-left">
+    <b><%= message.user.name %>　　</b>
+    <%= message.body %>
+    <% if message.avatar? %>
+    <center><%= image_tag message.avatar.url %></center>
+    <% end %>
+  </p>
+</div>
+<% end %>
+<% end %>
+<% end %>

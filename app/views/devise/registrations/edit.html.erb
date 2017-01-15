@@ -1,4 +1,4 @@
-<h1>Edit <%= resource_name.to_s.humanize %></h1>
+<h1>アカウント編集</h1>
 
 <div class="page4">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -20,11 +20,11 @@
   <% end %><br>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(変更したくない場合は空欄でお願い致します)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em><br>
+      <em>最低<%= @minimum_password_length %>文字でよろしくお願い致します</em><br>
     <% end %><br>
   </div>
 
@@ -34,17 +34,17 @@
   </div><br>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(変更を確認するために、現在のパスワードを教えてください)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div><br>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "更新" %>
   </div><br>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>アカウントを削除しますか？</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p><br>
+<p><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p><br>
 
-<%= link_to "Back", :back %></div>
+<%= link_to "戻る", :back %></div>

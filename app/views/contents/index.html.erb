@@ -1,0 +1,12 @@
+<h1>記事一覧 <a class="vote" href="<%=  new_channel_content_path %>">投稿</a></h1>
+<div class="page4">
+  <ul>
+    <% @contents.each do |content| %>
+    <!-- # チャットのタイトルにlink_toでリンクを設定します。 -->
+    <%= link_to channel_content_path(content,content[:id]) do%><li class="allcontent_t">
+      <div class="allcontent">
+        <%= content.title %>
+        <div class="allcontent_b"><%= content.body %></div>
+      </div>
+      <% end %></li><% end %></ul>
+    </div>
