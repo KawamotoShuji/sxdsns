@@ -1,25 +1,38 @@
 <h1>カテゴリー覧</h1>
 <div class="page2">
-<div class="box1">
-<%= link_to "雑談", chats_path %>
+    <%= link_to chats_path do%>
+  <div class="box1 box">
+     雑談
+  </div>
+  <%end%>
+    <%= link_to teaches_path do%>
+  <div class="box2 box">
+    授業
+  </div>
+  <%end%>
+  <br>
+  <%= link_to find_works_path do%>
+  <div class="box3 box">
+    就活
+  </div>
+  <%end%>
+  <%= link_to labs_path do%>
+  <div class="box4 box">
+    研究室
+  </div>
+  <%end%>
+  <br>
+  <%= link_to opinions_path do%>
+  <div class="box5 box">
+    意見箱
+  </div>
+  <%end%>
+  <%= link_to others_path do%>
+  <div class="box6 box">
+    その他
+  </div>
+  <%end%>
 </div>
-<div class="box2">
-<%= link_to "授業", teaches_path %>
-</div>
-<br>
-<div class="box3">
-<%= link_to "就活", find_works_path %>
-</div>
-<div class="box4">
-<%= link_to "研究室", labs_path %>
-</div>
-<br>
-<div class="box5">
-<%= link_to "意見箱", opinions_path %>
-</div>
-<div class="box6">
-<%= link_to "その他", others_path %>
-</div></div>
 
 <div class="foot"><p>Service eXperience Design 2017</p></div>
 </div>

@@ -1,40 +1,51 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic);
+body{
+  font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
 .body{
-    width:100%;
-    margin:0px;
-    background-image:url(mokume.jpg);
+  width:100%;
+  height: 100%;
+  margin:0px;
+  background-image:url(mokume.jpg);
 }
 p{
-    color:#191970;
-    border-bottom: 1px solid #d3d3d3;
-    width:800px;
+  color:#191970;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 12px;
+  overflow: scroll;
 }
-p2{
-    color:#191970;
-    border-bottom: 1px solid #d3d3d3;
-    width:400px;
-    font-size: 16px;
+.p-content{
+  color:#191970;
+  border-bottom: 1px solid #d3d3d3;
+  width:400px;
+  font-size: 16px;
 }
 
 
 h1{
-    color:#191970;
-    border-bottom: 3px solid #0000cd;
-    width:850px;
-    line-height: 45px;
-    font-size: 22px;
+  color:#191970;
+  border-bottom: 3px solid #0000cd;
+  width:700px;
+  line-height: 45px;
+  font-size: 22px;
 }
 
 h2{
-    color:#191970;
-    border-bottom: 3px solid #0000cd;
-    width:600px;
-    line-height: 45px;
-    font-size: 22px;
-    text-align: center;
+  color:#191970;
+  border-bottom: 3px solid #0000cd;
+  width:600px;
+  line-height: 45px;
+  font-size: 22px;
+  text-align: center;
+}
+
+h3:first-child{
+  padding-top: 50px;
 }
 
 a {
-text-decoration: none;
+  text-decoration: none;
 }
 
 
@@ -42,14 +53,14 @@ text-decoration: none;
 
 
 .menutag{
-    float:left;
-    color:#fff;
-    background-color: #191970;
-    width:330px;
-    padding:30px 10px;
-    height: 100vh;
-    line-height: 50px;
-    font-size: 18px;
+  float:left;
+  color:#fff;
+  background-color: #191970;
+  width:250px;
+  padding:30px 10px;
+  height: 100vh;
+  line-height: 50px;
+  font-size: 18px;
 }
 
 .menutag a:link { color: #fff; }
@@ -57,36 +68,35 @@ text-decoration: none;
 .menutag a:hover { color: #ffd700; }
 
 .page{
-    color:#191970;
-    background-color: #FFF;
-    width:850px;
-    margin-left: 350px;
-    padding:30px;
-    border-radius: 0px 25px 25px 0px;
-    height: 100vh;
-    font-size: 16px;
-    border: 1px solid #d3d3d3;
+  color:#191970;
+  background-color: #FFF;
+  width:750px;
+  padding:30px;
+  border-radius: 0px 25px 25px 0px;
+  height: 100vh;
+  font-size: 16px;
+  border: 1px solid #d3d3d3;
+  float: left;
 }
 .page2{
-    color:#191970;
-    background-color: #FFF;
-    width:600px;
-    margin:0 auto;
+  color:#191970;
+  background-color: #FFF;
+  width:600px;
+  margin:0 auto;
 }
 .page3{
-    color:#191970;
-    background-color: #FFF;
-    width:600px;
-    margin:0 auto;
-    text-align: center;
+  color:#191970;
+  background-color: #FFF;
+  width:600px;
+  margin:0 auto;
+  text-align: center;
 }
 .page4{
-    color:#191970;
-    background-color: #FFF;
-    width:750px;
-    margin:0 auto;
+  color:#191970;
+  background-color: #FFF;
+  width:750px;
+  margin:0 auto;
 }
-
 
 .box1{
   width:260px;
@@ -148,6 +158,12 @@ text-decoration: none;
   float:left;
 }
 
+.box{
+  text-align: center;
+  height: 50px;
+  border-radius: 5px;
+}
+
 .bottom{
   padding:5px;
   background-color: #e6e6fa;
@@ -187,3 +203,131 @@ text-decoration: none;
   overflow:scroll;
 }
 
+.underbar{
+  border-bottom: 3px solid #d3d3d3;
+  border-color: #0000ff;
+  font-size: 28px;
+}
+
+h1{
+  font-size: 43px;
+  border-left: 10px solid #B0c4de;
+  padding: 15px;
+  border-bottom: none;
+
+}
+
+.content-right{
+  border-bottom: 1px solid #ebb;
+  padding: 20px 20px;
+  float: right;
+  text-align: right;
+  background-color: #afeeee;
+  border-radius: 5px;
+  width: auto;
+  max-width: 80%;
+  overflow: scroll;
+}
+
+.content-left{
+  border-bottom: 1px solid #ebb;
+  padding: 20px 20px;
+  float: left;
+  background-color: #eff2f2;
+  border-radius: 5px;
+  width: auto;
+  max-width: 80%;
+  overflow: scroll;
+}
+
+.content-block{
+  clear: both;
+}
+.content-block:last-child{
+  margin-bottom: 150px;
+}
+
+
+.block{
+  clear: both;
+  padding-top: 20px;
+  position: fixed;
+  bottom: -10px;
+  background: #fff;
+  width:750px;
+  height:10vh;
+  border-radius: 0,0,25px,0;
+}
+
+.allcontent_t{
+  float: left;
+  font-size: 22px;
+}
+.allcontent_b{
+  float: right;
+  clear:both;
+  font-size: 16px;
+  list-style:none;
+}
+
+.allcontent{
+  margin:2px;
+  background-color:#ffffcc;
+  width:650px;
+  padding:10px;
+}
+
+.logo img{
+  width: 150px;
+  margin-left: 10px;
+}
+
+.logo{
+  font-size: 20px;
+}
+
+.font{
+  margin-left: 30px;
+}
+
+.wrapper{
+  width: 1100px
+}
+
+.postcomment{
+  float: right;
+}
+
+.linkback{
+  float: left;
+}
+
+.comment-title {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 780px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -30px;
+}
+
+.commentinfo{
+  margin-top: 100px;
+}
+
+.top-logo{
+  border-bottom: 1px solid #d3d3d3;
+  width: 100%;
+  height: 100%;
+  background-size:contain;
+  background-image: url("SXD2017.jpg");
+  box-shadow: 2px 2px 2px 2px #454545;
+}
+
+.top-logo img{
+  width: 550px;
+}
+
+.introduction{
+  text-align: left;
+}

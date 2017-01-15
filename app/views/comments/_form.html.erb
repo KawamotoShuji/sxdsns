@@ -1,0 +1,11 @@
+<%= form_for(@comment, :url => channel_content_comments_path(content[:channel_id], comment[:content_id]), remote: true, authenticity_token: true) do |f| %>
+<%= f.hidden_field :content_id %>
+<% if @comment.avatar? %>
+<%= image_tag @comment.avatar.url %>
+<% end %>
+<%= f.label :avatar, "画像" %>
+<%= f.file_field :avatar %>
+<%= f.hidden_field :avatar_cache %>
+<%= f.text_field :body, placeholder: "コメントを打ち込みましょう"%>
+<%= f.submit"コメントする" %>
+<% end %>

@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
-  <title>SXD_SNS</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <title>InformBacket</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body class="body">
-  <div class="menutag">
-    <ul style="list-style:none"
-        <% if user_signed_in? %>
-        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'ホーム', root_path %></li>
-        <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
-        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <div class="wrapper">
+    <div class="menutag">
+      <ul style="list-style:none"
+      <% if user_signed_in? %>
+      <center>
+        <div class="logo">
+          <%= link_to image_tag('/inform_packet.png'),root_path %>
+          <div class="font">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Categories', channels_path %></li>
+            <li><%= link_to 'MyPage', edit_user_registration_path %></li>
+            <div class="logout">
+              <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete %></li>
+            </div>
+            <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+          </div>
+        </div>
+      </center>
+      <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse --><!-- /.container-fluid -->
 
-<div class="page">
-<% flash.each do |key, value| %>
-<div class="alert alert-<%= key %>">
-  <%= value %>
-</div>
-<% end %>
-<%= yield %>
-<br>
-</div>
+  <div class="page">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+    <% end %>
+    <%= yield %>
 
+    <br>
+  </div>
+</div>
 </body>
 </html>

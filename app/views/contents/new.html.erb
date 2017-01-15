@@ -1,0 +1,25 @@
+<a class="vote" href="<%= channel_contents_path(params[:channel_id]) %>">記事一覧へ戻る</a>
+
+<% if @content.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @content.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @content.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="page4"><br>
+<%= form_for(@content,:url => channel_contents_path) do |f| %>
+<%= f.hidden_field :channel_id %>
+<p class="p-content"><%= f.label :title %></p><br>
+<%= f.text_field :title %>
+<br>
+<br>
+<p class="p-content"><%= f.label :body %></p><br>
+<%= f.text_field :body %>
+<br><br>
+<%= f.submit "投稿",:class => 'bottom'%>
+<% end %>

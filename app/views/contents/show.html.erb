@@ -1,0 +1,30 @@
+<div class="comment-title">
+<h1>
+  <%= @content.title %>
+</h1>
+</div>
+<div class="commentinfo">
+<h3>
+内容：
+<%= @content.body %><br>
+</h3>
+<h3>
+作成時間：
+<%= @content.created_at.strftime("%y/%m/%d %p %l:%M") %><br>
+</h3>
+</div>
+<p class="underbar">コメント一覧</p>
+<!-- ↓これは消さないで -->
+<div id="messages_area">
+  <%= render partial: 'comments/index', locals: { comments: @comments, content: @content } %>
+</div>
+
+<div class="block">
+  <div class="postcomment">
+    <%= render partial: 'comments/form', locals: { comment: @comment, content: @content } %>
+    <!-- <a class="vote" id="test" href="<%=  channels_path %>">カテゴリ一覧へ戻る</a> -->
+  </div>
+  <!-- <div class="linkback">
+    <a class="vote" href="<%= channel_contents_path(params[:channel_id]) %>">記事一覧へ戻る</a>
+  </div> -->
+</div>
